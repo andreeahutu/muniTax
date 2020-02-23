@@ -1,6 +1,6 @@
 using System;
 
-namespace muniTax
+namespace MunicipalityTax
 {
     public class Tax{
       public TimePeriod Type {get;}

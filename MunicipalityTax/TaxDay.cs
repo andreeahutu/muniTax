@@ -1,5 +1,5 @@
 using System;
-namespace muniTax
+namespace MunicipalityTax
 {
     public class TaxDay {
         static readonly DateTime START_DATE = new DateTime(1800, 1,1).Date;

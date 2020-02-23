@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace muniTax
+namespace MunicipalityTax
 {
     public class Municipality {
         
