@@ -52,30 +52,24 @@ namespace MunicipalityTax
         public void ImportMunicipalitiesDataFromFile(string file){
             string[] lines = null;
             try{
-                File.ReadAllText (file);
+                lines = File.ReadAllLines (file);
             } catch (Exception e) {
                 if(e is ArgumentException || e is ArgumentNullException || 
                 e is PathTooLongException ||  e is DirectoryNotFoundException ||
                 e is FileNotFoundException || e is NotSupportedException){
-                     throw new Exception("Invalid file path, please make sure you have the correct path");
+                     throw new InvalidFilePathException();
                 }
                else  if (e is UnauthorizedAccessException || e is SecurityException ){
-                   throw new Exception("File is readonly or we do not have permisions to access it");
+                   throw new AccessErrorException();
                } else {
-                   throw new Exception("An error has occured");
+                   throw new Exception("An error has occured");//don't quite like this
                }
             };
-            try {
-                 foreach(string line in lines){
-                ScheduleTax(line);
-                }
-            } catch (Exception e){
-                throw new Exception ("Error parsing the file. Expected format: period type, municipality name,  taxRate, date \n "+
-                "where period type should be daily or weekly or monthly or yearly and date is in dd/MM/yyyy format");
-            }
            
+            foreach(string line in lines){
+                ScheduleTax(line);
+            }
         }
-
         public double GetTax(string name, DateTime day){
             string municipalityName = StringHelper.cleanupString(name);
             if (municipalities.ContainsKey(municipalityName)){

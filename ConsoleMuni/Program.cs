@@ -18,6 +18,8 @@ namespace ConsoleMuni
             Console.WriteLine(service.GetTax("Vilnius", new DateTime(2016, 07, 10)));
             Console.WriteLine(service.GetTax("Vilnius", new DateTime(2016, 03, 16)));
 
+            service.ImportMunicipalitiesDataFromFile("../inputs/input1.txt");
+
         }
     }
 }

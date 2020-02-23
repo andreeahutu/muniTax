@@ -39,7 +39,6 @@ namespace MunicipalityTax
             if (taxDays.ContainsKey(dayIndex)){
                 return taxDays[dayIndex].TaxRate;
             }
-            //probably not how i should handle this in the end...
             return 0;
         }
     }

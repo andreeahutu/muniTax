@@ -4,6 +4,7 @@ using MunicipalityTax;
 
 namespace MunicipalityTax.Tests
 {
+    
     public class MunicipalityTax_AddTaxShould
     {
         [Test]

@@ -24,20 +24,24 @@ namespace MunicipalityTax
         }
         public Tax(string taxEntryLine)
         {
-            //expected format: PeriodType, municipalityName,  taxRate,date in "dd/MM/yyyy" format, 
-
-            string[] inputs = taxEntryLine.Trim().Split(',');         
-            if (inputs == null)
+            if (taxEntryLine == null)
             {
                 //this tehnically should never be thrown
-                throw new Exception("Null string");
+                throw new TaxEntryParsingException();
             }
-        
+            //expected format: PeriodType, municipalityName,  taxRate,date in "dd/MM/yyyy" format, 
+            string[] inputs = null;
+            try {
+                inputs = taxEntryLine.Trim().Split(','); 
+            } catch (Exception e){
+                throw new TaxEntryParsingException();
+            }       
+            
             if (inputs.Length != 4)
             {
-                throw new Exception("Not enough entries per line");
+                throw new TaxEntryParsingException();
             }
-            TimePeriod period=TimePeriod.Daily;
+            TimePeriod period = TimePeriod.Daily;
             //TO DO I am sure there is a smarter way to do this 
             //but is probably using reflexion and enum description
             switch (StringHelper.cleanupString(inputs[0]))
@@ -55,12 +59,24 @@ namespace MunicipalityTax
                     period = TimePeriod.Yearly;
                     break;
                 default: 
-                    throw new Exception("Bad format");
-                    break;
+                    throw new TaxEntryParsingException();
             }
             string name = StringHelper.cleanupString(inputs[1]);
-            int taxRate = Int32.Parse(inputs[2]);
-            DateTime date = DateTime.ParseExact(inputs[3], "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            double taxRate = 0;
+            DateTime date = new DateTime();
+            try {
+                taxRate = Double.Parse(inputs[2]);
+               
+            } catch (Exception e){
+                throw new TaxEntryParsingException();
+            }
+            try {
+                date = DateTime.Parse(inputs[3]);
+
+            } catch (Exception e){
+                throw new TaxEntryParsingException();
+            }
+             
             this.Type = period;
             this.Name = name;
             this.Percentage = taxRate;
@@ -88,7 +104,6 @@ namespace MunicipalityTax
                     break;
                 default:
                     throw new Exception("Bad format");
-                    break;
             }
             this.Type = period;
             this.Name = name;
