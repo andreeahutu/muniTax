@@ -7,7 +7,7 @@ namespace MunicipalityTax
              TimeSpan span = date - TaxDay.START_DATE;
              return span.Days;
         }
-        public int DayIndex; 
+        public int DayIndex {get;} 
         public double TaxRate {get;}
         public TimePeriod TaxType {get;}
         

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "consoleMuni", "ConsoleMuni\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MunicipalityTax", "MunicipalityTax\MunicipalityTax.csproj", "{9A9ADC38-2EEA-432E-80A3-4D6188B1E051}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MunicipalityTax.Tests", "MunicipalityTax.Tests\MunicipalityTax.Tests.csproj", "{42B82F94-FB99-4904-9A63-FB9856A631BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{9A9ADC38-2EEA-432E-80A3-4D6188B1E051}.Release|x64.Build.0 = Release|Any CPU
 		{9A9ADC38-2EEA-432E-80A3-4D6188B1E051}.Release|x86.ActiveCfg = Release|Any CPU
 		{9A9ADC38-2EEA-432E-80A3-4D6188B1E051}.Release|x86.Build.0 = Release|Any CPU
+		{42B82F94-FB99-4904-9A63-FB9856A631BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42B82F94-FB99-4904-9A63-FB9856A631BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42B82F94-FB99-4904-9A63-FB9856A631BE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{42B82F94-FB99-4904-9A63-FB9856A631BE}.Debug|x64.Build.0 = Debug|Any CPU
+		{42B82F94-FB99-4904-9A63-FB9856A631BE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{42B82F94-FB99-4904-9A63-FB9856A631BE}.Debug|x86.Build.0 = Debug|Any CPU
+		{42B82F94-FB99-4904-9A63-FB9856A631BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42B82F94-FB99-4904-9A63-FB9856A631BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42B82F94-FB99-4904-9A63-FB9856A631BE}.Release|x64.ActiveCfg = Release|Any CPU
+		{42B82F94-FB99-4904-9A63-FB9856A631BE}.Release|x64.Build.0 = Release|Any CPU
+		{42B82F94-FB99-4904-9A63-FB9856A631BE}.Release|x86.ActiveCfg = Release|Any CPU
+		{42B82F94-FB99-4904-9A63-FB9856A631BE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -13,10 +13,10 @@ namespace ConsoleMuni
             vilnius.AddTax(new Tax(new DateTime(2016, 1, 1), 01));
             vilnius.AddTax(new Tax(new DateTime(2016, 12, 25), 01));
 
-            Console.WriteLine(vilnius.GetTaxForDate(new DateTime(2016, 01, 01)));
-            Console.WriteLine(vilnius.GetTaxForDate(new DateTime(2016, 05, 02)));
-            Console.WriteLine(vilnius.GetTaxForDate(new DateTime(2016, 07, 10)));
-            Console.WriteLine(vilnius.GetTaxForDate(new DateTime(2016, 03, 16)));
+            Console.WriteLine(vilnius.GetTax(new DateTime(2016, 01, 01)));
+            Console.WriteLine(vilnius.GetTax(new DateTime(2016, 05, 02)));
+            Console.WriteLine(vilnius.GetTax(new DateTime(2016, 07, 10)));
+            Console.WriteLine(vilnius.GetTax(new DateTime(2016, 03, 16)));
 
         }
     }

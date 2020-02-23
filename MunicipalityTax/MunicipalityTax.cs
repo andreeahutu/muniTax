@@ -25,18 +25,16 @@ namespace MunicipalityTax
                  //ex day<month, means it overrides it
                  if (newTaxDay.TaxType <= existingTaxDay.TaxType){
                      taxDays[dayIndex] = newTaxDay;
-                     Console.WriteLine( "overwritting day"+ day+"with"+ newTaxDay.TaxRate );
                  }
              } else {
                  taxDays[dayIndex] = newTaxDay;
-                 Console.WriteLine( "ionserting day"+ day+"with"+ newTaxDay.TaxRate );
              }
 
          }
 
         }
 
-        public double GetTaxForDate( DateTime date){
+        public double GetTax( DateTime date){
             int dayIndex = TaxDay.getDayIndex(date);
             if (taxDays.ContainsKey(dayIndex)){
                 return taxDays[dayIndex].TaxRate;
