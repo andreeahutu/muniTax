@@ -14,7 +14,10 @@ namespace MunicipalityTax
           this.Percentage = percentage;
           this.StartDate = startDate.Date;
           this.EndDate = endDate.Date;
+          //TO DO handle case where start date is after enddate
+          //to do maybe i shouy=d have separate Yearly,  Monthly, daily tax
       }
+    
       public Tax(DateTime date, double percentage){
           this.Type = TimePeriod.Daily;
           this.Percentage = percentage;
