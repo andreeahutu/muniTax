@@ -7,16 +7,16 @@ namespace ConsoleMuni
     {
         static void Main(string[] args)
         {
-            Municipality vilnius = new Municipality("Vilnius");
-            vilnius.AddTax(new Tax(TimePeriod.Yearly, 0.2, new DateTime(2016,1, 1), new DateTime(2016, 12, 31)));
-            vilnius.AddTax(new Tax(TimePeriod.Monthly, 0.4, new DateTime(2016, 05, 01), new DateTime(2016, 05, 31)));
-            vilnius.AddTax(new Tax(new DateTime(2016, 1, 1), 01));
-            vilnius.AddTax(new Tax(new DateTime(2016, 12, 25), 01));
-
-            Console.WriteLine(vilnius.GetTax(new DateTime(2016, 01, 01)));
-            Console.WriteLine(vilnius.GetTax(new DateTime(2016, 05, 02)));
-            Console.WriteLine(vilnius.GetTax(new DateTime(2016, 07, 10)));
-            Console.WriteLine(vilnius.GetTax(new DateTime(2016, 03, 16)));
+            MunicipalityTaxService service = new MunicipalityTaxService();
+            service.ScheduleYearlyTax("Vilnius", new DateTime(2016,5, 5), 0.2 );
+            service.ScheduleMonthlyTax("Vilnius", new DateTime(2016,5, 5), 0.4);
+            service.ScheduleDailyTax("vilnius",new DateTime(2016, 1, 1), 0.1 );
+            service.ScheduleDailyTax("Vilnius",new DateTime(2016, 12, 25), 0.1 );
+          
+            Console.WriteLine(service.GetTax("Vilnius", new DateTime(2016, 01, 01)));
+            Console.WriteLine(service.GetTax("vilnius", new DateTime(2016, 05, 02)));
+            Console.WriteLine(service.GetTax("Vilnius", new DateTime(2016, 07, 10)));
+            Console.WriteLine(service.GetTax("Vilnius", new DateTime(2016, 03, 16)));
 
         }
     }
