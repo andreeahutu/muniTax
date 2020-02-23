@@ -8,10 +8,10 @@ namespace ConsoleMuni
         static void Main(string[] args)
         {
             MunicipalityTaxService service = new MunicipalityTaxService();
-            service.ScheduleYearlyTax("Vilnius", new DateTime(2016,5, 5), 0.2 );
-            service.ScheduleMonthlyTax("Vilnius", new DateTime(2016,5, 5), 0.4);
-            service.ScheduleDailyTax("vilnius",new DateTime(2016, 1, 1), 0.1 );
-            service.ScheduleDailyTax("Vilnius",new DateTime(2016, 12, 25), 0.1 );
+            service.ScheduleYearlyTax("Vilnius", 0.2, new DateTime(2016,5, 5) );
+            service.ScheduleMonthlyTax("Vilnius", 0.4, new DateTime(2016,5, 5));
+            service.ScheduleDailyTax("vilnius", 0.1, new DateTime(2016, 1, 1));
+            service.ScheduleDailyTax("Vilnius", 0.1, new DateTime(2016, 12, 25) );
           
             Console.WriteLine(service.GetTax("Vilnius", new DateTime(2016, 01, 01)));
             Console.WriteLine(service.GetTax("vilnius", new DateTime(2016, 05, 02)));
